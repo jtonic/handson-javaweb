@@ -12,14 +12,14 @@ import java.io.PrintWriter;
  * Date: 9/13/13
  * Time: 3:43 PM
  */
-public class MyServlet extends HttpServlet {
+public class GreetingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // do nothing
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         final PrintWriter writer = response.getWriter();
-        writer.append("Hello servlet");
+        writer.append("Hello servlet!!!");
         writer.flush();
     }
 }

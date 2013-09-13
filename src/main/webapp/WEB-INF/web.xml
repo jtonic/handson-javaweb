@@ -8,13 +8,32 @@
 	<display-name>Handson Java vanilla Web application</display-name>
 
     <servlet>
-        <servlet-name>myservlet</servlet-name>
-        <servlet-class>ro.jtonic.handson.javaweb.MyServlet</servlet-class>
+        <servlet-name>greetingServlet</servlet-name>
+        <servlet-class>ro.jtonic.handson.javaweb.GreetingServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>greetingjsp</servlet-name>
+        <jsp-file>/pages/greeting.jsp</jsp-file>
+    </servlet>
+
+    <servlet>
+        <servlet-name>greetingjstl</servlet-name>
+        <jsp-file>/pages/greetingtaglib.jsp</jsp-file>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>myservlet</servlet-name>
-        <url-pattern>/myservlet</url-pattern>
+        <servlet-name>greetingServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>greetingjsp</servlet-name>
+        <url-pattern>/hellojsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>greetingjstl</servlet-name>
+        <url-pattern>/hellojstl</url-pattern>
+    </servlet-mapping>
 </web-app>
