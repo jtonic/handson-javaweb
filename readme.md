@@ -40,7 +40,47 @@
 1. Create a simple taglib for validation
 
 
-#### Tomcat 7 installation (ubuntu 13.04):
+#### Install jdk 1.7 oracle version on ubuntu:
+
+1. Download jdk from http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
+
+    Choose the right OS and architecture.
+
+    For my machine I chosen:
+
+    Linux x64	131.63 MB  	jdk-7u40-linux-x64.tar.gz
+
+1. Untar it in a directory in user home, say ~/Development/jdks/java
+
+    After un-archiving you will end up having the following folder
+
+    /home/jtonic/Development/sdks/java/jdk1.7.0_25/
+
+    This is known as a JAVA_HOME directory
+
+1. Know we have to let linux know about the java installation.
+    To o that add the following lines in both ~/.profiles and ~/.bashrc. If both or one of them do not exist create them with $ touch ~/.profiles or $ touch ~/.bashrc
+
+    export JAVA_HOME=/home/jtonic/Development/sdks/java/jdk1.7.0_25
+    export PATH=$JAVA_HOME/bin:$PATH
+
+1. reload the files using
+    $ . ~/.bashrc
+    $ . ~/.profiles
+
+1. check java installation
+
+    $ java -version
+
+#### Install maven 3 on ubuntu:
+
+1. $ sudo apt-get install maven
+
+1. Check installation
+
+    $ mvn -v
+
+#### Install Tomcat 7 on ubuntu 13.04:
 
 1. Install tomcat
 
