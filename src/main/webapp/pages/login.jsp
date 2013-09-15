@@ -23,6 +23,10 @@
             <c:when test="${empty password || empty username}">
                 <p>No password or username</p>
             </c:when>
+            <c:when test="${username == 'admin'}">
+                <jsp:forward page="/hellojstl"/>
+                <%--"${ pageContext.forward('/hellojsp')}"--%> <%--non standard el--%>
+            </c:when>
             <c:otherwise>
                 <pre>
                     Password: ${username}

@@ -169,4 +169,54 @@
  Further details here: http://docs.oracle.com/javaee/1.4/tutorial/doc/JSPIntro7.html
 
 
+1. Setting and getting session attributes using vanilla jsp:
+
+    <% session.setAttribute( "theName", name ); %>
+
+    <%= session.getAttribute( "theName" ) %>
+
+1. In JSP there are 2 types of tags: loaded from external tag libs or predefined tags.
+
+    1. Predefined tags start with jsp: See below the predefined tags
+
+        <jsp:forward>
+
+        <jsp:include>
+
+        <jsp:param>
+
+        <jsp:plugin>
+
+        <jsp:useBean>
+
+        <jsp:getProperty> // Used for Java Beans
+
+        <jsp:setProperty> // Used for Java Beans
+
+
+1. Import classes or all package classes in JSP
+
+    <%@ page import="fully-qualified-classname, packagename.*" %>
+
+
+1. Differences between forward and redirect
+
+        Excerpts from http://javapapers.com/jsp/difference-between-forward-and-sendredirect/
+
+        "Control can be forward to resources available within the server from where the call is made. This transfer of control is done by the container internally and browser / client is not involved. This is the major difference between forward and sendRedirect. When the forward is done, the original request and response objects are transfered along with additional parameters if needed."
+
+        Example of forward in jsp:
+
+        Control can be redirect to resources to different servers or domains. This transfer of control task is delegated to the browser by the container. That is, the redirect sends a header back to the browser / client. This header contains the resource url to be redirected by the browser. Then the browser initiates a new request to the given url. Since it is a new request, the old request and response object is lost."
+
+        Example of redirect in jsp:
+
+        <% response.sendRedirect("http://www.google.com"); %>
+
+1. A JSP is just a servlet in disguise.
+
+        <jsp:forward page="/hellojsp"/>
+
+        "${ pageContext.forward('/hellojsp')}"
+
 
