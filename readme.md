@@ -203,20 +203,25 @@
 
         Excerpts from http://javapapers.com/jsp/difference-between-forward-and-sendredirect/
 
-        "Control can be forward to resources available within the server from where the call is made. This transfer of control is done by the container internally and browser / client is not involved. This is the major difference between forward and sendRedirect. When the forward is done, the original request and response objects are transfered along with additional parameters if needed."
+ > Control can be forward to resources available within the server from where the call is made. This transfer of control is done by the container internally and browser / client is not involved. This is the major difference between forward and sendRedirect. When the forward is done, the original request and response objects are transfered along with additional parameters if needed.
 
-        Example of forward in jsp:
+        Example of forward in jsp/jstl/servlet:
 
-        Control can be redirect to resources to different servers or domains. This transfer of control task is delegated to the browser by the container. That is, the redirect sends a header back to the browser / client. This header contains the resource url to be redirected by the browser. Then the browser initiates a new request to the given url. Since it is a new request, the old request and response object is lost."
+        (jsp) <jsp:forward page="/hellojsp"/>
 
-        Example of redirect in jsp:
+        (jsp el) "${ pageContext.forward('/hellojsp')}"
 
-        <% response.sendRedirect("http://www.google.com"); %>
+        (servlet) httpServletRequest.getRequestDispatcher("/hellojstl").forward(httpServletRequest, httpServletResponse);
+
+        Note: for forward value can be used both the url-pattern in web.xml or the path to jsp files, i.e.: /pages/greeting.jsp
+
+ > Control can be redirect to resources to different servers or domains. This transfer of control task is delegated to the browser by the container. That is, the redirect sends a header back to the browser / client. This header contains the resource url to be redirected by the browser. Then the browser initiates a new request to the given url. Since it is a new request, the old request and response object is lost.
+
+        Example of redirect in jsp/servlet:
+
+        (jsp) <% response.sendRedirect("http://www.google.com"); %>
+
+        (servlet) httpServletResponse.sendRedirect("http://www.google.com");
 
 1. A JSP is just a servlet in disguise.
-
-        <jsp:forward page="/hellojsp"/>
-
-        "${ pageContext.forward('/hellojsp')}"
-
 
