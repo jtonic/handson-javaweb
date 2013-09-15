@@ -29,6 +29,10 @@
 
     (in browser) http://localhost:8080/handson-javaweb/hellojstl
 
+1. [V] Create the login page and use jstl for if branches and getting the param values
+
+    (in browser) http://localhost:8080/handson-javaweb/login
+
 1. Create a simple login page using Servlet
 
 1. Create a simple login page using plain jsp
@@ -159,5 +163,10 @@
     Expressions <%= ..%>
 
     Scriptlets <% ..%>
+
+1. JSP expressions are very powerful and expressive. So favor it over the java code or vanilla jsp syntax elements.
+
+ Further details here: http://docs.oracle.com/javaee/1.4/tutorial/doc/JSPIntro7.html
+
 
 
